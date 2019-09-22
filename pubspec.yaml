@@ -23,6 +23,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  toast: ^0.1.5
+  http: ^0.12.0+2
+  curved_navigation_bar: ^0.3.1
 
 dev_dependencies:
   flutter_test:
@@ -70,3 +73,35 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/
+  fonts:
+    - family: Montserrat Regular
+      fonts:
+        # https://fonts.google.com/specimen/Montserrat
+        - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
+    - family: Montserrat Medium
+      fonts:
+        # https://fonts.google.com/specimen/Montserrat
+        - asset: assets/fonts/Montserrat/Montserrat-Medium.ttf
+
+    - family: Quicksand-Bold
+      fonts:
+        # https://fonts.google.com/specimen/Quicksand
+        - asset: assets/fonts/Quicksand/Quicksand-Bold.ttf
+    - family: Quicksand-Light
+      fonts:
+        # https://fonts.google.com/specimen/Quicksand
+        - asset: assets/fonts/Quicksand/Quicksand-Light.ttf
+    - family: Quicksand-Medium
+      fonts:
+        # https://fonts.google.com/specimen/Quicksand
+        - asset: assets/fonts/Quicksand/Quicksand-Medium.ttf
+    - family: Quicksand-Regular
+      fonts:
+        # https://fonts.google.com/specimen/Quicksand
+        - asset: assets/fonts/Quicksand/Quicksand-Regular.ttf
+    - family: Quicksand-SemiBold
+      fonts:
+        # https://fonts.google.com/specimen/Quicksand
+        - asset: assets/fonts/Quicksand/Quicksand-SemiBold.ttf
