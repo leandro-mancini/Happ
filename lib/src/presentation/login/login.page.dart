@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'package:flutter/material.dart';
 import 'package:happ/src/presentation/home/home.page.dart';
@@ -55,7 +56,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
-            // margin: EdgeInsets.all(40),
             child: _form(),
           ),
           Container(
@@ -64,14 +64,14 @@ class _LoginPageState extends State<LoginPage> {
               left: 40,
               right: 30
             ),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center ,
               children: <Widget>[
                 Text(
                   'Não possui uma conta?',
                   style: TextStyle(
                     fontFamily: 'Quicksand-Medium',
-                    fontSize: 16
+                    fontSize: 14
                   )
                 ),
                 FlatButton(
@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       color: Color(0xFF5acb8a),
                       fontFamily: 'Quicksand-Bold',
-                      fontSize: 16
+                      fontSize: 14
                     ),
                   ),
                   onPressed: () {},
@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
               suffixIcon: IconButton(
                 icon: Icon(
-                  Icons.lock,
+                  MaterialCommunityIcons.eye_outline,
                   color: Color(0xFF5acb8a),
                 ), onPressed: () {},
               )
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       color: Color(0xFF5acb8a),
                       fontFamily: 'Quicksand-Bold',
-                      fontSize: 14
+                      fontSize: 12
                     ),
                   ),
                   onPressed: () {},
@@ -199,34 +199,19 @@ class _LoginPageState extends State<LoginPage> {
     return Row(
       children: <Widget>[
         Checkbox(
-          value: boolValue,
+          value: rememberVal,
           activeColor: Color(0xFF5acb8a),
-          onChanged: (bool val) => setState(() => boolValue = val),
+          onChanged: (bool val) => setState(() => rememberVal = val),
         ),
         Text(
           title,
           style: TextStyle(
             fontFamily: 'Quicksand-Medium',
-            fontSize: 16
+            fontSize: 12
           )
         ),
       ],
     );
-    // return Row(
-    //   children: <Widget>[
-    //     Checkbox(
-    //       activeColor: Color(0xFF5acb8a),
-    //       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    //       value: boolValue,
-    //       onChanged: (bool value) {
-    //         setState(() {
-    //           rememberVal = value;
-    //         });
-    //       },
-    //     ),
-    //     Text(title)
-    //   ],
-    // );
   }
 }
 
