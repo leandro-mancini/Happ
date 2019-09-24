@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isSwitched = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,7 +146,7 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
               ),
               color: Color(0xFF5acb8a),
               child: _chart(),
@@ -200,6 +202,7 @@ class _HomePageState extends State<HomePage> {
           verticalIndicatorColor: Color(0xFF5acb8a),
           showVerticalIndicator: true,
           footerHeight: 50,
+          snap: false
         ),
       ),
     );
@@ -211,16 +214,51 @@ class _HomePageState extends State<HomePage> {
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/img_room.jpg"),
-                fit: BoxFit.cover,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
               ),
-            ),
-            child: Text(
-              'Living Room',
-              style: TextStyle(
-                color: Colors.white
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  image: DecorationImage(
+                    image: AssetImage('assets/img_room.jpg'),
+                    fit: BoxFit.cover
+                  )
+                ),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    bottom: 20,
+                    left: 20
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.05),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        'Living Room',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Quicksand-Bold',
+                          fontSize: 16
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // child: Container(
+                  // child: Text(
+                  //   'Living Room',
+                  //   style: TextStyle(
+                  //     color: Colors.white,
+                  //     fontFamily: 'Quicksand-Bold',
+                  //     fontSize: 16
+                  //   ),
+                  // ),
+                // ),
               ),
             ),
           );
@@ -280,7 +318,7 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Card(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     color: Colors.white,
                     child: Container(
@@ -338,11 +376,10 @@ class _HomePageState extends State<HomePage> {
                             margin: EdgeInsets.only(
                               left: 10
                             ),
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.power_settings_new
-                              ),
-                              onPressed: () {},
+                            child: Switch(
+                              value: isSwitched,
+                              onChanged: (value) {},
+                              activeColor: Color(0xFF5acb8a),
                             ),
                           )
                         ],
