@@ -218,9 +218,9 @@ class _LoginPageState extends State<LoginPage> {
     userEntity.username = 'test';
     userEntity.password = '123';
 
-    UserEntity newUser = await this.userUsecase.login(userEntity);
+    // UserEntity newUser = await this.userUsecase.login(userEntity);
 
-    print(newUser);
+    // print(newUser);
 
     Navigator.push(
       context, 
