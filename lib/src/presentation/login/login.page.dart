@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'package:flutter/material.dart';
+import 'package:happ/src/domain/entities/user_entity.dart';
+import 'package:happ/src/domain/usecases/user_usecase.dart';
 import 'package:happ/src/presentation/home/home.page.dart';
 import 'package:happ/src/widgets/input.dart';
 
@@ -11,6 +13,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  UserUsecase userUsecase = new UserUsecase();
+
   bool rememberVal = false;
 
   @override
@@ -180,14 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 1.2
                 ),
               ),
-              onPressed: () => {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  )
-                )
-              },
+              onPressed: () => login(),
             ),
           )
         ],
@@ -211,6 +208,25 @@ class _LoginPageState extends State<LoginPage> {
           )
         ),
       ],
+    );
+  }
+
+  Future login() async {
+
+    UserEntity userEntity = new UserEntity();
+
+    userEntity.username = 'test';
+    userEntity.password = '123';
+
+    UserEntity newUser = await this.userUsecase.login(userEntity);
+
+    print(newUser);
+
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      )
     );
   }
 }

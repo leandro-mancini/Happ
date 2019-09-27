@@ -110,9 +110,31 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         _gallery(),
+        _menu(),
         _aparelhos(),
         _usoEletricidade()
       ],
+    );
+  }
+
+  Widget _menu() {
+    return Container(
+      child: Container(
+        height: 80.0,
+        child: new ListView(
+          scrollDirection: Axis.horizontal,
+          children: new List.generate(10, (int index) {
+            return new Card(
+              color: Colors.blue[index * 100],
+              child: new Container(
+                width: 50.0,
+                height: 50.0,
+                child: new Text("$index"),
+              ),
+            );
+          }),
+        ),
+      ),
     );
   }
 
